@@ -1,10 +1,31 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Welcome";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row container justify-content-center">
+    <div class="col-md-4 text-center">
+        <h2>Login</h2>
+        <hr />
+        <section>
+            <form id="login" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating" style="margin: 5px 0px">
+                    <input asp-for="Credential.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Credential.Email" class="form-label"></label>
+                    <span asp-validation-for="Credential.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating" style="margin: 5px 0px">
+                    <input asp-for="Credential.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                    <label asp-for="Credential.Password" class="form-label"></label>
+                    <span asp-validation-for="Credential.Password" class="text-danger"></span>
+                </div>
+                
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                </div>
+            </form>
+        </section>
+    </div>
 </div>

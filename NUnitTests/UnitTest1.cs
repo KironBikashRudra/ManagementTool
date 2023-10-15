@@ -26,7 +26,7 @@ namespace NUnitTests
             con.Open();
 
             // Assert
-            NUnit.Framework.Assert.That(con.State == ConnectionState.Open);
+            Assert.That(con.State == ConnectionState.Open);
         }
 
 
